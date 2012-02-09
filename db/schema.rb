@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209114730) do
+ActiveRecord::Schema.define(:version => 20120209123031) do
 
   create_table "accesses", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120209114730) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id"
+    t.integer  "group_id"
   end
 
   create_table "topics", :force => true do |t|

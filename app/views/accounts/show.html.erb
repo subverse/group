@@ -19,5 +19,25 @@
 	<% end %>		
 </p>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Edit', edit_account_path(@account) %> 
+
+<br />
+
+<h3>Issues</h3>
+
+<table>
+  <tr>
+		<th>Group</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @account.subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.group.name %></td>
+    <td><%= subject.name %></td>
+    <td><%= link_to 'Show', subject %></td>
+  </tr>
+<% end %>
+</table>

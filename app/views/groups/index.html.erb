@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
 		<th>Account</th>
+		<th>Subjects</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= group.name %></td>
     <td><%= group.account.name %></td>
+    <td><%= group.subjects.count %></td>
     <td><%= link_to 'Show', group %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, confirm: 'Are you sure?', method: :delete %></td>

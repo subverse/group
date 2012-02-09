@@ -1,4 +1,7 @@
 class SubjectsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /subjects
   # GET /subjects.json
   def index
@@ -25,6 +28,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/new.json
   def new
     @accounts = Account.all
+    @groups = Group.all
     @subject = Subject.new
 
     respond_to do |format|
@@ -36,6 +40,8 @@ class SubjectsController < ApplicationController
   # GET /subjects/1/edit
   def edit
     @subject = Subject.find(params[:id])
+    @accounts = Account.all
+    @groups = Group.all
   end
 
   # POST /subjects
