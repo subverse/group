@@ -27,6 +27,7 @@ class GroupsController < ApplicationController
   # GET /groups/new
   # GET /groups/new.json
   def new
+    @accounts = Account.all
     @group = Group.new
 
     respond_to do |format|
@@ -37,6 +38,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+    @groups = Group.all
     @group = Group.find(params[:id])
   end
 

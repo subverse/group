@@ -27,7 +27,6 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @groups = Group.all
     @account = Account.new
 
     respond_to do |format|

@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+=begin
 for i in 1..3 do
   Subject.create(name: "Subj #{i}")
-end  
+=end  

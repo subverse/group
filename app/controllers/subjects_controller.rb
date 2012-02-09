@@ -24,6 +24,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/new
   # GET /subjects/new.json
   def new
+    @accounts = Account.all
     @subject = Subject.new
 
     respond_to do |format|

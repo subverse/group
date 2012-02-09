@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
   belongs_to :user
-  belongs_to :group
+  has_one :group
+  has_many :subjects
   
   attr_accessible :name, :user_id, :group_id
   

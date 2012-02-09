@@ -1,8 +1,9 @@
-<h1>Listing subjects</h1>
+<h1>Subjects</h1>
 
 <table>
   <tr>
     <th>Name</th>
+		<th>Account</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @subjects.each do |subject| %>
   <tr>
     <td><%= subject.name %></td>
+		<td><%= subject.account.name %></td>
     <td><%= link_to 'Show', subject %></td>
     <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
     <td><%= link_to 'Destroy', subject, confirm: 'Are you sure?', method: :delete %></td>

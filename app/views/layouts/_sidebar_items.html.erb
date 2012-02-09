@@ -4,6 +4,8 @@
 	<% else %>					
 		<li><%= link_to "sign_out", destroy_user_session_path, :method => :delete %></li>
 	<% end %>
-	<li><%= link_to "groups", groups_path %></li>
 	<li><%= link_to "accounts", accounts_path %></li>
+	<li><%= link_to "groups", groups_path %></li>
+	<li><%= link_to "subjs", subjects_path %></li>
+
 </ul>
