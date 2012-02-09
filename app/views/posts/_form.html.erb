@@ -1,0 +1,41 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :account_id %><br />
+    <%= current_user.account.name %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.select :group_id, options_from_collection_for_select(@groups, "id", "name") %>
+  </div>
+  <div class="field">
+    <%= f.label :consultant_id %><br />
+    <%= f.select :consultant_id, options_from_collection_for_select(@consultants, "id", "name") %>
+  </div>
+  <div class="field">
+    <%= f.label :subject_id %><br />
+    <%= f.select :subject_id, options_from_collection_for_select(@subjects, "id", "name") %>
+  </div>
+  <div class="field">
+    <%= f.label :rating_id %><br />
+    <%= f.select :rating_id, options_from_collection_for_select(@ratings, "id", "name") %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

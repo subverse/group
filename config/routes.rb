@@ -1,8 +1,10 @@
 Comapp::Application.routes.draw do
 
-  resources :consultants
+  resources :ratings
 
-  resources :topics
+  resources :posts
+
+  resources :consultants
 
   resources :subjects
 

@@ -10,6 +10,10 @@
   <%= @group.account.name %>
 </p>
 
+<%= link_to 'Edit', edit_group_path(@group) %> 
+
+<p>--------------------------------------------------------------------------------------</p>
+
 <p>
 	<b>subjects:</b>
 </p>
@@ -50,4 +54,3 @@
 <% end %>
 </table>
 
-<%= link_to 'Edit', edit_group_path(@group) %> 

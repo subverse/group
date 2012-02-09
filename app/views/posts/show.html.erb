@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account:</b>
+  <%= @post.account_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @post.group_id %>
+</p>
+
+<p>
+  <b>Consultant:</b>
+  <%= @post.consultant_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @post.subject_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @post.level_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

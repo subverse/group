@@ -9,3 +9,7 @@
 for i in 1..3 do
   Subject.create(name: "Subj #{i}")
 =end  
+
+Rating.create(name: "Positiv", value: 1)
+Rating.create(name: "Neutral", value: 2)
+Rating.create(name: "Negativ", value: 3)
