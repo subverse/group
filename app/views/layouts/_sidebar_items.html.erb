@@ -1,0 +1,9 @@
+<ul class="links">
+	<% if current_user.nil? %>	
+		<li><%= link_to "sign_in", new_user_session_path %></li>
+	<% else %>					
+		<li><%= link_to "sign_out", destroy_user_session_path, :method => :delete %></li>
+	<% end %>
+	<li><%= link_to "groups", groups_path %></li>
+	<li><%= link_to "accounts", accounts_path %></li>
+</ul>

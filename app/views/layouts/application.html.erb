@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comapp</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+	<%= render "layouts/script" %>
+	
+</head>
+<body>
+
+<div id="page">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if current_user.nil? %>	
+	SIGN IN!
+<% else %>	
+	<% if not current_user.account.nil? %>	
+		<%= current_user.account.name %>
+	<% end %>	
+	<%= " (#{current_user.email})" %>
+<% end %>	
+<hr>
+
+<div id="sidebar">
+  <ul id="sidebar-items">
+    <li>
+      <h3>Menu</h3>
+      <%= render "layouts/sidebar_items" %>
+    </li>
+  </ul>
+</div>
+
+<%= yield %>
+
+</div> <!-- page -->
+	
+</body>
+</html>

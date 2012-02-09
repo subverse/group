@@ -1,0 +1,17 @@
+## database
+*.sqlite3
+/config/database.yml
+
+## logfiles and tempfiles.
+/log/*.log
+tmp/**/*
+
+## editor related files
+*~
+*#
+*flymake
+
+
+## OS generated files
+.DS_Store*
+thumbs.db

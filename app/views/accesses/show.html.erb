@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @access.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @access.user_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @access.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_access_path(@access) %> |
+<%= link_to 'Back', accesses_path %>
