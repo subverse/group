@@ -31,6 +31,23 @@
 <% end %>
 </table>
 
-<br>
+<p>
+	<b>consultants:</b>
+</p>
+
+<table>
+  <tr>
+		<th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @group.consultants.each do |consultant| %>
+  <tr>
+	  <td><%= consultant.name %></td>
+    <td><%= link_to 'Show', consultant %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_group_path(@group) %> 
