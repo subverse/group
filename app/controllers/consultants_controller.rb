@@ -5,8 +5,14 @@ class ConsultantsController < ApplicationController
   # GET /consultants
   # GET /consultants.json
   def index
-    @consultants = Consultant.all
-
+#    @consultants = Consultant.where("group_id = ?", current_user.account.group.id)
+    @consultants = Consultant.all   
+    groups = current_user.account.groups
+    @consultants = Array.new
+    groups.each do |group|
+      @consultants.concat(group.consultants)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @consultants }

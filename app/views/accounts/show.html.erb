@@ -12,7 +12,7 @@
 
 <p>
   <b>Group:</b>
-	<% if not @account.group.nil? %>
+	<% if @account.leader? %>
   	<%= @account.group.name %>
 	<% else %>
 		<b>none</b>
@@ -21,23 +21,23 @@
 
 <%= link_to 'Edit', edit_account_path(@account) %> 
 
-<br />
 
-<h3>Issues</h3>
+<p>--------------------------------------------------------------------------------------</p>
+
+<h3>subjects</h3>
 
 <table>
   <tr>
-		<th>Group</th>
     <th>Name</th>
+		<th>Group</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-<% @account.subjects.each do |subject| %>
+<% @subjects.each do |subject| %>
   <tr>
+    <td><%= link_to subject.name, subject %></td>
     <td><%= subject.group.name %></td>
-    <td><%= subject.name %></td>
-    <td><%= link_to 'Show', subject %></td>
   </tr>
 <% end %>
 </table>

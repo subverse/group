@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if current_user.account.leader?
+      @posts = Post.where("account_id = ? OR group_id = ?", current_user.account.id, current_user.account.group.id)
+    else
+      @posts = Post.where("account_id = ?", current_user.account.id)
+    end
+    #@posts = Post.by_groups(current_user.account)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,9 +33,21 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @accounts = Account.all
-    @groups = Group.where("account_id = ?", current_user.account.id)
     @subjects = Subject.where("account_id = ?", current_user.account.id)
-    @consultants = Consultant.all
+    @subjects = @subjects.uniq
+    
+    @groups = Array.new
+    @subjects.each do |subject|
+      @groups.push(subject.group)
+    end 
+    @groups = @groups.uniq
+    
+    @consultants = Array.new
+    @groups.each do |group|
+      @consultants.concat(Consultant.where("group_id = ?", group.id))
+    end
+    @consultants = @consultants.uniq
+    
     @ratings = Rating.all
     @post = Post.new
 
@@ -49,6 +66,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.account_id = current_user.account.id
 
     respond_to do |format|
       if @post.save

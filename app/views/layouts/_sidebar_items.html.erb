@@ -5,10 +5,10 @@
 		<li><%= link_to "sign_out", destroy_user_session_path, :method => :delete %></li>
 	<% end %>
 	<% if not current_user.nil? %>
-		<li><%= link_to "accounts", accounts_path %></li>
-		<li><%= link_to "groups", groups_path %></li>
-		<li><%= link_to "subjects", subjects_path %></li>
-		<li><%= link_to "consultants", consultants_path %></li>
+		<li><%= link_to "account", account_path(current_user.account) %></li>
+		<% if current_user.account.leader? %>
+			<li><%= link_to "group", current_user.account.group %></li>
+		<% end %>	
 		<li><%= link_to "posts", posts_path %></li>
 	<% end %>
 </ul>

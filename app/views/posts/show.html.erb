@@ -2,27 +2,27 @@
 
 <p>
   <b>Account:</b>
-  <%= @post.account_id %>
+  <%= @post.account.name %>
 </p>
 
 <p>
   <b>Group:</b>
-  <%= @post.group_id %>
+  <%= @post.group.name %>
 </p>
 
 <p>
   <b>Consultant:</b>
-  <%= @post.consultant_id %>
+  <%= @post.consultant.name %>
 </p>
 
 <p>
   <b>Subject:</b>
-  <%= @post.subject_id %>
+  <%= @post.subject.name %>
 </p>
 
 <p>
-  <b>Level:</b>
-  <%= @post.level_id %>
+  <b>Rating:</b>
+  <%= @post.rating.name %>
 </p>
 
 <p>
@@ -31,5 +31,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post) %> 

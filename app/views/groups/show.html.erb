@@ -1,3 +1,5 @@
+<!--GROUP-->
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -22,6 +24,7 @@
   <tr>
 		<th>Name</th>
 		<th>Account</th>
+		<th>Posts</th>
     <th></th>
     <th></th>
     <th></th>
@@ -30,10 +33,13 @@
   <tr>
 	  <td><%= subject.name %></td>
     <td><%= subject.account.name %></td>
+    <td><%= subject.posts.count %></td>
     <td><%= link_to 'Show', subject %></td>
   </tr>
 <% end %>
 </table>
+
+<p>--------------------------------------------------------------------------------------</p>
 
 <p>
 	<b>consultants:</b>
@@ -53,4 +59,5 @@
   </tr>
 <% end %>
 </table>
+
 

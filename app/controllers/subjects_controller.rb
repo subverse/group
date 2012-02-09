@@ -6,6 +6,7 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    
 
     respond_to do |format|
       format.html # index.html.erb

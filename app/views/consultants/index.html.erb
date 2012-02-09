@@ -1,9 +1,10 @@
-<h1>Listing consultants</h1>
+<h1>consultants</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Group</th>
+		<th>Posts</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +13,8 @@
 <% @consultants.each do |consultant| %>
   <tr>
     <td><%= consultant.name %></td>
-    <td><%= consultant.group_id %></td>
+    <td><%= consultant.group.name %></td>
+    <td><%= consultant.posts.count %></td>
     <td><%= link_to 'Show', consultant %></td>
     <td><%= link_to 'Edit', edit_consultant_path(consultant) %></td>
     <td><%= link_to 'Destroy', consultant, confirm: 'Are you sure?', method: :delete %></td>

@@ -10,6 +10,10 @@
   <%= @consultant.group_id %>
 </p>
 
+<p>
+  <b>Posts:</b>
+  <%= link_to "#{@consultant.posts.count}", posts_path  %>
+</p>
 
 <%= link_to 'Edit', edit_consultant_path(@consultant) %> |
 <%= link_to 'Back', consultants_path %>

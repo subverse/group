@@ -15,5 +15,30 @@
   <%= @subject.group.name %>
 </p>
 
+<p>
+	<b>Posts:</b>
+	<%= @subject.posts.count %>
+</p>
+
 <%= link_to 'Edit', edit_subject_path(@subject) %>
+
+<p>--------------------------------------------------------------------------------------</p>
+
+<h3>Consultants</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subject.group.consultants.each do |consultant| %>
+  <tr>
+    <td><%= link_to consultant.name, consultant %></td>
+  </tr>
+<% end %>
+</table>
+
 
