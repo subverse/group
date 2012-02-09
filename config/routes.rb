@@ -1,5 +1,7 @@
 Comapp::Application.routes.draw do
 
+  resources :consultants
+
   resources :topics
 
   resources :subjects

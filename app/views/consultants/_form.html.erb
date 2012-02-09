@@ -1,0 +1,25 @@
+<%= form_for(@consultant) do |f| %>
+  <% if @consultant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consultant.errors.count, "error") %> prohibited this consultant from being saved:</h2>
+
+      <ul>
+      <% @consultant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.select :group_id, options_from_collection_for_select(@groups, "id", "name") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

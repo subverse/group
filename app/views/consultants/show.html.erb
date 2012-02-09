@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @consultant.name %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @consultant.group_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_consultant_path(@consultant) %> |
+<%= link_to 'Back', consultants_path %>
